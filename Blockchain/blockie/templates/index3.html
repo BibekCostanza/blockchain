@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    {% load static %}
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section class="contact">
+        
+        <div class="contact-form">
+        
+        <h1>Contact <span>Us</span></h1>
+        <p>We are available for Paid Blockchain Technology work. Connect with Us via phone:0123456789 or email:admin@example.com</p>
+        <form method="POST">
+            {% csrf_token %}
+            {%include "messages.html"%}
+            <input type="" name="name" placeholder="name" required>
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+            <input type=""  name="subject"  id= "subject" placeholder="Write a Subject" required>
+            <textarea name="something" id="something" cols="30" rows="10" placeholder="Your Message" required>
+
+            </textarea>
+            <input type="submit" name="" value="submit" class="btn">
+        </form>
+        </div>
+
+        <div class="contact-img">
+            <img src="{% static 'images/v1.jpeg' %}">
+        </div>
+    </section>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+section{
+    padding: 40px 15%;
+}
+
+.contact{
+    background: #101010;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid-gap: 6rem;
+}
+
+.contact-img img{
+    max-width: 100%;
+    width: 720px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-form h1{
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+span{
+    color: #f9004d;
+}
+
+.contact-form p{
+    color: #c6c9d8bf;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-size: 1.1rem;
+    margin-bottom: 3.8rem;
+}
+
+.contact-form form{
+    position: relative;
+}
+
+.contact-form form input, form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: #191919;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+
+.contact-form textarea{
+    resize: none;
+    height: 200px;
+}
+
+.contact-form form .btn{
+    display: inline-block;
+    background: #f9004d;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 220px;
+    transition: ease ,20s;
+    cursor: pointer;
+}
+
+.contact-form form .btn:hover{
+    border: 2px solid #f9004d;
+    background: transparent;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1570px){
+    section{
+        padding: 80px 3%;
+        transition: .2s;
+    }
+    .contact-form h1{
+        font-size: 60px;
+    }
+    .contact-form p{
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 1090px){
+    .contact{
+        grid-gap: 2rem;
+        transition: .3s;
+    }
+}
+
+@media (max-width: 1000px){
+    .contact{
+        grid-template-columns: 1fr;
+    }
+    .contact-form{
+        order: 2;
+    }
+    .contact-img img{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+</body>
+</html>

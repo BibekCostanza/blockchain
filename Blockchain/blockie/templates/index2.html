@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0b614738c1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Log In To Blockchain</title>
+    {% load static %}
+    
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST">
+        {% csrf_token %}
+      
+      {%include "messages.html"%}
+      <h1>Log In</h1>
+      <div class="box">
+        <i class="fa fa-envelope"></i>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter Your Email"
+        />
+      </div>
+      <div class="box">
+        <i class="fa fa-key"></i>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Your password"
+        />
+      </div>
+      <a href="\home/signup">signup</a>
+      <button class="btn">Sign In</button>
+    </div>
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: url("{% static 'images/b1.jpg' %}"); no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .container {
+    color: white;
+    position: absolute;
+    top: 16%;
+    left: 30%;
+  }
+  
+  .container h1 {
+    width: 50%;
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 5px solid purple;
+    margin-bottom: 15px;
+    padding: 13px 0;
+  }
+  
+  .box {
+    width: 100%;
+    margin: 22px 0px;
+    border-bottom: 2px solid purple;
+  }
+  
+  .box input {
+    background: none;
+    width: 75%;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  
+  .box i {
+    width: 25px;
+    text-align: center;
+  }
+  
+  .btn {
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin: 12px 0;
+    padding: 10px 21px;
+    border: 2px solid purple;
+    border-radius: 10px;
+    font-size: 18px;
+    background: none;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    color: purple;
+    background: white;
+    opacity: 0.5;
+  }
+  
+    </style>
+  </body>
+</html>
